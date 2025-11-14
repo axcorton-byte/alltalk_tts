@@ -65,24 +65,7 @@ fi
 # Main Menu
 main_menu() {
     while true; do
-        clear
-        echo
-        echo -e "    ${L_BLUE}ALLTALK LINUX SETUP UTILITY${NC}"
-        echo
-        echo "    INSTALLATION TYPE"
-        echo -e "    1) I am using AllTalk as part of ${L_GREEN}Text-generation-webui${NC}"
-        echo -e "    2) I am using AllTalk as a ${L_GREEN}Standalone Application${NC}"
-        echo
-        echo -e "    9)${L_RED} Exit/Quit${NC}"
-        echo
-        read -p "    Enter your choice: " user_option
-
-        case $user_option in
-            1) webui_menu ;;
-            2) standalone_menu ;;
-            9) exit 0 ;;
-            *) echo "Invalid option"; sleep 2 ;;
-        esac
+        standalone_menu ;;
     done
 }
 
@@ -242,40 +225,7 @@ generate_diagnostics_textgen() {
 # Standalone Menu
 standalone_menu() {
     while true; do
-        clear
-        echo
-        echo -e "    ${L_BLUE}ALLTALK STANDALONE APPLICATION SETUP${NC}"
-        echo
-        echo "    BASE REQUIREMENTS"
-        echo "    1) Install AllTalk as a Standalone Application"
-        echo
-        echo "    OPTIONAL"
-        echo "    2) Git Pull the latest AllTalk updates from Github"
-        echo "    3) Re-Apply/Update the requirements file"
-        echo "    4) Delete AllTalk's custom Python environment"
-        echo "    5) Purge the PIP cache"
-        echo
-        echo "    DEEPSPEED"
-        echo "    6) DeepSpeed Instructions/Install"
-        echo
-        echo "    OTHER"        
-        echo "    8) Generate a diagnostics file"
-        echo
-        echo -e "    9)${L_RED} Exit/Quit${NC}"
-        echo
-        read -p "    Enter your choice: " standalone_option
-
-        case $standalone_option in
-            1) install_custom_standalone ;;
-            2) gitpull_standalone ;;
-            3) reapply_standalone ;;
-            4) delete_custom_standalone ;;
-            5) pippurge_standalone ;;
-            6) install_deepspeed ;;
-            8) generate_diagnostics_standalone ;;
-            9) exit 0 ;;
-            *) echo "Invalid option"; sleep 2 ;;
-        esac
+        install_custom_standalone ;;
     done
 }
 
