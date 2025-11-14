@@ -64,9 +64,7 @@ fi
 
 # Main Menu
 main_menu() {
-    while true; do
-        standalone_menu ;;
-    done
+    standalone_menu() ;;
 }
 
 # Text-generation-webui Menu
